@@ -1,0 +1,376 @@
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReviews (20221206105606)
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tutorial_id" varchar, "comment" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221206105606"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTrainers (20221206105752)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "address" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221206105752"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTutorials (20221206105927)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "tutorials" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "url" varchar, "trainer_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221206105927"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20221206110042)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221206110042"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-01-15 16:28:26.770750"], ["updated_at", "2023-01-15 16:28:26.770750"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.6ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Richard Ouma"], ["email", "ouma.richrd@gmail"], ["address", "Ngong Road,Nairobi"], ["created_at", "2023-01-15 16:28:36.477681"], ["updated_at", "2023-01-15 16:28:36.477681"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (1.2ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Beatrice Wambui"], ["email", "wambui.beatrice@gmail.com"], ["address", "Lavington,Nairobi"], ["created_at", "2023-01-15 16:28:36.493304"], ["updated_at", "2023-01-15 16:28:36.493304"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.7ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Joseph Macharia"], ["email", "machari.jose45@gmail.com"], ["address", "Satelite,Nairobi"], ["created_at", "2023-01-15 16:28:36.508699"], ["updated_at", "2023-01-15 16:28:36.508699"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lisa Lyayuga"], ["email", "lyayugalisa505@gmail.com"], ["address", "Kabiria,Nairobi"], ["created_at", "2023-01-15 16:28:36.520243"], ["updated_at", "2023-01-15 16:28:36.520243"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chris Mbogo"], ["email", "chris.mbogo@gmail.com"], ["address", "Donholm,Nairobi"], ["created_at", "2023-01-15 16:28:36.531118"], ["updated_at", "2023-01-15 16:28:36.531118"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oscar Okumu"], ["email", "okumuoscar45@gmail.com"], ["address", "South B,Nairobi"], ["created_at", "2023-01-15 16:28:36.541834"], ["updated_at", "2023-01-15 16:28:36.541834"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.4ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Valeria Bosibori"], ["email", "bosiborival505@gmail.com"], ["address", "Kilimani, Nairobi"], ["created_at", "2023-01-15 16:28:36.551073"], ["updated_at", "2023-01-15 16:28:36.551073"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ivy Murage"], ["email", "murage.ivy34@gmailcom"], ["address", "Karen,Nairobi"], ["created_at", "2023-01-15 16:28:36.560094"], ["updated_at", "2023-01-15 16:28:36.560094"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.4ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Yoga For Complete Beginners - 20 Minute Home Yoga Workout!\n"], ["description", "Yoga for Complete Beginners! Adriene welcomes all levels - complete and total beginners to start here! Hop on the mat and start to build the foundation of your own yoga practice with this 20 minute home workout video! Enjoy, stay mindful and find what feels good."], ["url", "https://www.youtube.com/embed/v7AYKMP6rOE&t=95s"], ["trainer_id", "1"], ["created_at", "2023-01-15 16:28:36.623751"], ["updated_at", "2023-01-15 16:28:36.623751"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.4ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "45 Minute Strength & Conditioning Workout [Dumbbells + Cardio-HIIT]"], ["description", "You HAVE to tap into this 45 minute strength and conditioning workout for a full body training session 🔥 This workout is designed to improve your overall strength and endurance over time. We'll start with 20 minutes of dumbbell weight training and then finish with 20 minutes of Cardio-HIIT training. As you can imagine, this workout can be a beast BUT we've provided some modifications and features to help you manage throughout. As always, give it a try, have some fun, and let us know how you did!"], ["url", "https://www.youtube.com/embed/DUbdcKZ6e3E"], ["trainer_id", "1"], ["created_at", "2023-01-15 16:28:36.639347"], ["updated_at", "2023-01-15 16:28:36.639347"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.3ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "20 Minute Lower Body & Abs Strength Workout [Dumbbells OR Bodyweight]"], ["description", "Tap into this lower body strength workout for a solid leg day pump! We take you through lower body strength training exercises with some core intensive movements sprinkled in. You also have the option of doing this workout with or without dumbbells and Toya will provide modifications for the more difficult exercises. Feel free to go as light or as heavy as you need to get the most out of your session. Drop a comment and let us know how. you did! 🔥"], ["url", "https://www.youtube.com/embed/y-uAqSyMbnQ"], ["trainer_id", "2"], ["created_at", "2023-01-15 16:28:36.654079"], ["updated_at", "2023-01-15 16:28:36.654079"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.4ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "15 Minute Upper Body Dumbbell Workout [Strength Training]"], ["description", "Tap in with us for a 15 minute upper body dumbbell workout that will help you build muscle (tone) and strength! This workout is designed for moderate to heavy resistance so you'll want to use a pair of dumbbells that are heavy enough to challenge yourself with each movement. If you're looking to build strength or muscle, we recommend going heavier in weight. For fat loss and muscular endurance, increase the temp with lighter weights. Each movement will finish with a 15 second iso metric hold to maximize those strength gains! Feel free to repeat this circuit for multiple sets for better results!  As always, try out the workout and let us know how you did! 🔥"], ["url", "https://www.youtube.com/embed/NDOlPdyZLMg"], ["trainer_id", "2"], ["created_at", "2023-01-15 16:28:36.667616"], ["updated_at", "2023-01-15 16:28:36.667616"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.4ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "10 MIN BEGINNER AB WORKOUT-No Equipment "], ["description", "If you have a hard time keeping up with my super intense 10min Ab Workout 10min Sixpack Workout ) Everybody starts somewhere and my other workouts require suuuper strong core muscles. That's why I really wanted to create an ab workout, that is suitable for beginners - while still being super effective. "], ["url", "https://www.youtube.com/embed/1f8yoFFdkcY"], ["trainer_id", "2"], ["created_at", "2023-01-15 16:28:36.681381"], ["updated_at", "2023-01-15 16:28:36.681381"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.3ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Intense Lower Abs Workout  Burn Lower Belly Fat "], ["description", "Hot new lower abs workout for you! Here's a new favourite routine of mine with back to back abs exercise that's going to help you feel that burn! Enjoy working on those abs and do smash that like button and leave a comment!"], ["url", "https://www.youtube.com/embed/JEEG0hBNk3E"], ["trainer_id", "3"], ["created_at", "2023-01-15 16:28:36.696220"], ["updated_at", "2023-01-15 16:28:36.696220"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.3ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "This Killer Workout Torches Calories — About 500 in 45 Minutes\n"], ["description", "It's time to break a sweat! This 45-minute workout from celebrity trainer Jeanette Jenkins, who trains Pink and Alicia Keys, will help you burn up to 500 calories. How, you might ask? Because Jeanette keeps you moving the entire time! It's a wonderfully intense workout, but we offer modifications for all the moves too. Grab a towel to mop your brow, a bottle of water to hydrate during the workout, and press play."], ["url", "https://www.youtube.com/embed/_Zem0_qsDg0"], ["trainer_id", "3"], ["created_at", "2023-01-15 16:28:36.711379"], ["updated_at", "2023-01-15 16:28:36.711379"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.5ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "12 Minute Leg Slimming Workout For Women Over 50!\n"], ["description", "12 minute slimmer legs workout with exercises for the inner thigh, outer thigh, glutes to lengthen and tone your legs for summer. Suitable exercise for beginners and women over 50."], ["url", "https://www.youtube.com/embed/8CxwX_dFg1k"], ["trainer_id", "3"], ["created_at", "2023-01-15 16:28:36.724199"], ["updated_at", "2023-01-15 16:28:36.724199"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.3ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "30 MIN INTENSE Build & Burn HIIT Workout - NO REPEAT - with weights (dumbbells), full body\n"], ["description", "Burning calories and building muscle doesn't need to be complicated. All you need is 30 Minutes Time and a set of dumbbells. Let's do it: 30 MINUTE HIIT & STRENGTH Workout with weights (dumbbells).\n\n    Today we start with a nice warm up (dynamic movements & stretching). Next we have 20 HIIT and Strength exercises,  50 seconds on each exercise, followed by 10 seconds of rest. At the end we finish together with a cool down."], ["url", "https://www.youtube.com/embed/U1AxehdzHRs"], ["trainer_id", "3"], ["created_at", "2023-01-15 16:28:36.739306"], ["updated_at", "2023-01-15 16:28:36.739306"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/login" for 127.0.0.1 at 2023-01-15 19:29:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"otienorichard", "password"=>"[FILTERED]", "session"=>{"username"=>"otienorichard", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "otienorichard"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 401 Unauthorized in 10ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 2968)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-01-15 19:30:21 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Linah Imbari", "username"=>"imbarilinah", "email"=>"imbarilinah45@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Linah Imbari", "username"=>"imbarilinah", "email"=>"imbarilinah45@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fc068bd7970>, params: {"name"=>"Linah Imbari", "username"=>"imbarilinah", "email"=>"imbarilinah45@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Linah Imbari", "username"=>"imbarilinah", "email"=>"imbarilinah45@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "imbarilinah45@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "imbarilinah"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Linah Imbari"], ["username", "imbarilinah"], ["email", "imbarilinah45@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-15 16:30:21.391340"], ["updated_at", "2023-01-15 16:30:21.391340"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Completed 201 Created in 374ms (Views: 1.0ms | ActiveRecord: 11.8ms | Allocations: 22838)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2023-01-15 19:30:21 +0300
+Processing by TutorialsController#index as */*
+  [1m[36mTutorial Load (0.6ms)[0m  [1m[34mSELECT "tutorials".* FROM "tutorials"[0m
+  ↳ app/controllers/tutorials_controller.rb:15:in `index'
+Completed 200 OK in 39ms (Views: 32.5ms | ActiveRecord: 1.3ms | Allocations: 18436)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2023-01-15 19:31:55 +0300
+Processing by TutorialsController#index as */*
+  [1m[36mTutorial Load (0.3ms)[0m  [1m[34mSELECT "tutorials".* FROM "tutorials"[0m
+  ↳ app/controllers/tutorials_controller.rb:15:in `index'
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms | Allocations: 1846)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-01-15 19:33:01 +0300
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 176)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-15 19:33:16 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"imbarilinah", "password"=>"[FILTERED]", "session"=>{"username"=>"imbarilinah", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "imbarilinah"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 200 OK in 347ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 802)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2023-01-15 19:33:17 +0300
+Processing by TutorialsController#index as */*
+  [1m[36mTutorial Load (0.2ms)[0m  [1m[34mSELECT "tutorials".* FROM "tutorials"[0m
+  ↳ app/controllers/tutorials_controller.rb:15:in `index'
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 1846)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-15 19:34:38 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"otienorichard", "password"=>"[FILTERED]", "session"=>{"username"=>"otienorichard", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "otienorichard"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 401 Unauthorized in 4ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 507)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-01-15 19:35:32 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Chardo Ricky", "username"=>"chardoricky", "email"=>"neon@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Chardo Ricky", "username"=>"chardoricky", "email"=>"neon@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fc0589b67f0>, params: {"name"=>"Chardo Ricky", "username"=>"chardoricky", "email"=>"neon@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Chardo Ricky", "username"=>"chardoricky", "email"=>"neon@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "neon@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "chardoricky"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Chardo Ricky"], ["username", "chardoricky"], ["email", "neon@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-15 16:35:32.388335"], ["updated_at", "2023-01-15 16:35:32.388335"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Completed 201 Created in 362ms (Views: 0.5ms | ActiveRecord: 12.3ms | Allocations: 3539)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-20 13:02:03 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Jared Omondi", "username"=>"omondi", "email"=>"mymuun10@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Jared Omondi", "username"=>"omondi", "email"=>"mymuun10@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f23c0b02698>, params: {"name"=>"Jared Omondi", "username"=>"omondi", "email"=>"mymuun10@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Jared Omondi", "username"=>"omondi", "email"=>"mymuun10@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mymuun10@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "omondi"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jared Omondi"], ["username", "omondi"], ["email", "mymuun10@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-20 10:02:04.214669"], ["updated_at", "2023-03-20 10:02:04.214669"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Completed 201 Created in 299ms (Views: 0.3ms | ActiveRecord: 6.3ms | Allocations: 22025)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2023-03-20 13:02:04 +0300
+Processing by TutorialsController#index as */*
+  [1m[36mTutorial Load (0.2ms)[0m  [1m[34mSELECT "tutorials".* FROM "tutorials"[0m
+  ↳ app/controllers/tutorials_controller.rb:15:in `index'
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 1.1ms | Allocations: 18466)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews"[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tutorial_id" varchar, "comment" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "trainers"[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "address" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "tutorials"[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "tutorials" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "url" varchar, "trainer_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221206110042)[0m
+  [1m[35m (4.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221206105606),
+(20221206105752),
+(20221206105927);
+
+[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-20 10:07:48.685074"], ["updated_at", "2023-03-20 10:07:48.685074"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7f6f6210cb6391d5a78ac9c4967cbb0081f2b8ce"], ["created_at", "2023-03-20 10:07:48.702761"], ["updated_at", "2023-03-20 10:07:48.702761"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "reviews"[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tutorial_id" varchar, "comment" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "trainers"[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "address" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "tutorials"[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "tutorials" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "url" varchar, "trainer_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221206110042)[0m
+  [1m[35m (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221206105606),
+(20221206105752),
+(20221206105927);
+
+[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-20 10:07:48.767609"], ["updated_at", "2023-03-20 10:07:48.767609"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2023-03-20 10:07:48.776891"], ["key", "environment"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7f6f6210cb6391d5a78ac9c4967cbb0081f2b8ce"], ["created_at", "2023-03-20 10:07:48.786138"], ["updated_at", "2023-03-20 10:07:48.786138"]]
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Richard Ouma"], ["email", "ouma.richrd@gmail"], ["address", "Ngong Road,Nairobi"], ["created_at", "2023-03-20 10:07:48.821950"], ["updated_at", "2023-03-20 10:07:48.821950"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Beatrice Wambui"], ["email", "wambui.beatrice@gmail.com"], ["address", "Lavington,Nairobi"], ["created_at", "2023-03-20 10:07:48.830878"], ["updated_at", "2023-03-20 10:07:48.830878"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Joseph Macharia"], ["email", "machari.jose45@gmail.com"], ["address", "Satelite,Nairobi"], ["created_at", "2023-03-20 10:07:48.839011"], ["updated_at", "2023-03-20 10:07:48.839011"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.2ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lisa Lyayuga"], ["email", "lyayugalisa505@gmail.com"], ["address", "Kabiria,Nairobi"], ["created_at", "2023-03-20 10:07:48.846423"], ["updated_at", "2023-03-20 10:07:48.846423"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.2ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Chris Mbogo"], ["email", "chris.mbogo@gmail.com"], ["address", "Donholm,Nairobi"], ["created_at", "2023-03-20 10:07:48.853395"], ["updated_at", "2023-03-20 10:07:48.853395"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.6ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oscar Okumu"], ["email", "okumuoscar45@gmail.com"], ["address", "South B,Nairobi"], ["created_at", "2023-03-20 10:07:48.861866"], ["updated_at", "2023-03-20 10:07:48.861866"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.4ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Valeria Bosibori"], ["email", "bosiborival505@gmail.com"], ["address", "Kilimani, Nairobi"], ["created_at", "2023-03-20 10:07:48.873031"], ["updated_at", "2023-03-20 10:07:48.873031"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Create (0.4ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "email", "address", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ivy Murage"], ["email", "murage.ivy34@gmailcom"], ["address", "Karen,Nairobi"], ["created_at", "2023-03-20 10:07:48.882888"], ["updated_at", "2023-03-20 10:07:48.882888"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.4ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Yoga For Complete Beginners - 20 Minute Home Yoga Workout!\n"], ["description", "Yoga for Complete Beginners! Adriene welcomes all levels - complete and total beginners to start here! Hop on the mat and start to build the foundation of your own yoga practice with this 20 minute home workout video! Enjoy, stay mindful and find what feels good."], ["url", "https://www.youtube.com/embed/v7AYKMP6rOE&t=95s"], ["trainer_id", "1"], ["created_at", "2023-03-20 10:07:48.933163"], ["updated_at", "2023-03-20 10:07:48.933163"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.3ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "45 Minute Strength & Conditioning Workout [Dumbbells + Cardio-HIIT]"], ["description", "You HAVE to tap into this 45 minute strength and conditioning workout for a full body training session 🔥 This workout is designed to improve your overall strength and endurance over time. We'll start with 20 minutes of dumbbell weight training and then finish with 20 minutes of Cardio-HIIT training. As you can imagine, this workout can be a beast BUT we've provided some modifications and features to help you manage throughout. As always, give it a try, have some fun, and let us know how you did!"], ["url", "https://www.youtube.com/embed/DUbdcKZ6e3E"], ["trainer_id", "1"], ["created_at", "2023-03-20 10:07:48.945444"], ["updated_at", "2023-03-20 10:07:48.945444"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.2ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "20 Minute Lower Body & Abs Strength Workout [Dumbbells OR Bodyweight]"], ["description", "Tap into this lower body strength workout for a solid leg day pump! We take you through lower body strength training exercises with some core intensive movements sprinkled in. You also have the option of doing this workout with or without dumbbells and Toya will provide modifications for the more difficult exercises. Feel free to go as light or as heavy as you need to get the most out of your session. Drop a comment and let us know how. you did! 🔥"], ["url", "https://www.youtube.com/embed/y-uAqSyMbnQ"], ["trainer_id", "2"], ["created_at", "2023-03-20 10:07:48.954996"], ["updated_at", "2023-03-20 10:07:48.954996"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.2ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "15 Minute Upper Body Dumbbell Workout [Strength Training]"], ["description", "Tap in with us for a 15 minute upper body dumbbell workout that will help you build muscle (tone) and strength! This workout is designed for moderate to heavy resistance so you'll want to use a pair of dumbbells that are heavy enough to challenge yourself with each movement. If you're looking to build strength or muscle, we recommend going heavier in weight. For fat loss and muscular endurance, increase the temp with lighter weights. Each movement will finish with a 15 second iso metric hold to maximize those strength gains! Feel free to repeat this circuit for multiple sets for better results!  As always, try out the workout and let us know how you did! 🔥"], ["url", "https://www.youtube.com/embed/NDOlPdyZLMg"], ["trainer_id", "2"], ["created_at", "2023-03-20 10:07:48.964826"], ["updated_at", "2023-03-20 10:07:48.964826"]]
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.2ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "10 MIN BEGINNER AB WORKOUT-No Equipment "], ["description", "If you have a hard time keeping up with my super intense 10min Ab Workout 10min Sixpack Workout ) Everybody starts somewhere and my other workouts require suuuper strong core muscles. That's why I really wanted to create an ab workout, that is suitable for beginners - while still being super effective. "], ["url", "https://www.youtube.com/embed/1f8yoFFdkcY"], ["trainer_id", "2"], ["created_at", "2023-03-20 10:07:48.974587"], ["updated_at", "2023-03-20 10:07:48.974587"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.2ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Intense Lower Abs Workout  Burn Lower Belly Fat "], ["description", "Hot new lower abs workout for you! Here's a new favourite routine of mine with back to back abs exercise that's going to help you feel that burn! Enjoy working on those abs and do smash that like button and leave a comment!"], ["url", "https://www.youtube.com/embed/JEEG0hBNk3E"], ["trainer_id", "3"], ["created_at", "2023-03-20 10:07:48.983734"], ["updated_at", "2023-03-20 10:07:48.983734"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.2ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "This Killer Workout Torches Calories — About 500 in 45 Minutes\n"], ["description", "It's time to break a sweat! This 45-minute workout from celebrity trainer Jeanette Jenkins, who trains Pink and Alicia Keys, will help you burn up to 500 calories. How, you might ask? Because Jeanette keeps you moving the entire time! It's a wonderfully intense workout, but we offer modifications for all the moves too. Grab a towel to mop your brow, a bottle of water to hydrate during the workout, and press play."], ["url", "https://www.youtube.com/embed/_Zem0_qsDg0"], ["trainer_id", "3"], ["created_at", "2023-03-20 10:07:48.992813"], ["updated_at", "2023-03-20 10:07:48.992813"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.2ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "12 Minute Leg Slimming Workout For Women Over 50!\n"], ["description", "12 minute slimmer legs workout with exercises for the inner thigh, outer thigh, glutes to lengthen and tone your legs for summer. Suitable exercise for beginners and women over 50."], ["url", "https://www.youtube.com/embed/8CxwX_dFg1k"], ["trainer_id", "3"], ["created_at", "2023-03-20 10:07:49.001356"], ["updated_at", "2023-03-20 10:07:49.001356"]]
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTrainer Load (0.1ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE "trainers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTutorial Create (0.2ms)[0m  [1m[32mINSERT INTO "tutorials" ("name", "description", "url", "trainer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "30 MIN INTENSE Build & Burn HIIT Workout - NO REPEAT - with weights (dumbbells), full body\n"], ["description", "Burning calories and building muscle doesn't need to be complicated. All you need is 30 Minutes Time and a set of dumbbells. Let's do it: 30 MINUTE HIIT & STRENGTH Workout with weights (dumbbells).\n\n    Today we start with a nice warm up (dynamic movements & stretching). Next we have 20 HIIT and Strength exercises,  50 seconds on each exercise, followed by 10 seconds of rest. At the end we finish together with a cool down."], ["url", "https://www.youtube.com/embed/U1AxehdzHRs"], ["trainer_id", "3"], ["created_at", "2023-03-20 10:07:49.013068"], ["updated_at", "2023-03-20 10:07:49.013068"]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/me" for 127.0.0.1 at 2023-03-20 13:08:29 +0300
+Started GET "/trainers" for 127.0.0.1 at 2023-03-20 13:08:29 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+Processing by TrainersController#index as */*
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 118)
+
+
+  [1m[36mTrainer Load (0.6ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  ↳ app/controllers/trainers_controller.rb:6:in `index'
+Completed 200 OK in 73ms (Views: 57.0ms | ActiveRecord: 2.9ms | Allocations: 20859)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-20 13:08:35 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"wesleyglen", "password"=>"[FILTERED]", "session"=>{"username"=>"wesleyglen", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "wesleyglen"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5:in `create'
+Completed 401 Unauthorized in 11ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 2676)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-20 13:09:31 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Christine Aguilera", "username"=>"chris", "email"=>"chris@gmail.com", "password"=>"[FILTERED]", "user"=>{"name"=>"Christine Aguilera", "username"=>"chris", "email"=>"chris@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fef30b8cc08>, params: {"name"=>"Christine Aguilera", "username"=>"chris", "email"=>"chris@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Christine Aguilera", "username"=>"chris", "email"=>"chris@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "chris@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "chris"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Christine Aguilera"], ["username", "chris"], ["email", "chris@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-20 10:09:31.676869"], ["updated_at", "2023-03-20 10:09:31.676869"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Completed 201 Created in 309ms (Views: 0.5ms | ActiveRecord: 12.0ms | Allocations: 18474)
+
+
+Started GET "/tutorials" for 127.0.0.1 at 2023-03-20 13:09:31 +0300
+Processing by TutorialsController#index as */*
+  [1m[36mTutorial Load (0.2ms)[0m  [1m[34mSELECT "tutorials".* FROM "tutorials"[0m
+  ↳ app/controllers/tutorials_controller.rb:15:in `index'
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 0.6ms | Allocations: 18419)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-20 13:09:42 +0300
+Processing by SessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 192)
+
+
