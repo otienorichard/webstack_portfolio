@@ -1,2 +1,0 @@
-    WEBSTACK_PORTFOLIO PROJECT
-    ---
